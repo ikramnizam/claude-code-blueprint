@@ -8,6 +8,8 @@ This repository documents a production Claude Code setup built over numerous ses
 
 **This is NOT a generic starter kit.** It's a reference architecture showing how a power user configures Claude Code for maximum productivity, with the reasoning behind every decision.
 
+**New to Claude Code?** Start with [GETTING-STARTED.md](GETTING-STARTED.md) — a beginner-friendly walkthrough covering the CLI, MCP servers, plugins, and your first 30 minutes.
+
 ## What's Inside
 
 | Component | Count | Purpose |
@@ -78,6 +80,12 @@ If you adopt this blueprint, audit your installed plugins and disable any that:
 3. Add broad permissions that bypass your permission restrictions
 
 Custom setup > generic plugins, because your setup encodes YOUR project's domain knowledge. A plugin can't know your architecture, your team's conventions, or your production constraints.
+
+## Acknowledgments
+
+The memory system pattern in this blueprint was inspired by [Project-AI-MemoryCore](https://github.com/Kiyoraka/Project-AI-MemoryCore) by Kiyoraka — a comprehensive AI memory architecture with 11 feature extensions (LRU project management, memory consolidation, echo recall, and more). If you want a deeper, more feature-rich memory system than the minimal scaffold included here, check out that project.
+
+**How they differ:** This blueprint covers the *full Claude Code configuration* (agents, skills, hooks, rules, settings). The `memory-template/` here is a lightweight scaffold. Project-AI-MemoryCore goes deep on the memory layer specifically — they're complementary, not competing.
 
 ## License
 
