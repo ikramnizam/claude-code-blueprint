@@ -1,8 +1,6 @@
 # Agents
 
-6 specialized subagents shipped (Phase 1), with model tiering, permission modes, and worktree isolation.
-
-> **Phase 2 planned:** 5 more agents (frontend-specialist, security-reviewer, code-reviewer, db-analyst, devops-engineer) — currently being sanitized from a production setup.
+11 specialized subagents with model tiering, permission modes, and worktree isolation.
 
 ## The EXCELLENT Pattern
 

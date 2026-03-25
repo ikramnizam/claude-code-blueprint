@@ -12,6 +12,7 @@
 | **Planning** | sprint-plan, elicit-requirements | "let's build", "new feature", multi-step tasks |
 | **Session** | load-session, save-session, session-end, save-diary | Session start/end, "save", "bye", "done" |
 | **Project** | init-project, register-project, status, changelog | "new project", "register project", "status" |
+| **Database** | db-check | "check the schema", "database health", "validate models" |
 | **Utilities** | tech-radar | "what's new?", "any updates?", "should we upgrade?" |
 
 ## Design Principles
@@ -21,10 +22,6 @@
 3. **GO/NO-GO verdicts** — Review and deploy skills end with clear pass/fail decisions
 4. **Multi-agent orchestration** — The review skill spawns code-reviewer + security-reviewer + db-analyst in parallel
 
-## Note
+## Customization
 
-This repo currently includes 9 generic skills (Phase 1). The remaining 8 skills that require project-specific customization will be added as generalized templates in a future update.
-
-Skills excluded from this blueprint:
-- **nda-guard** — Personal NDA enforcement (not generalizable — build your own if needed)
-- **team-member-review** — Single-person workflow (specific to one team's process)
+Most skills reference `CLAUDE.md` and `{MEMORYCORE_PATH}` as configuration sources. Replace these tokens with your actual paths when adopting.
