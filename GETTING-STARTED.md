@@ -408,10 +408,11 @@ If you're adopting this blueprint across a team (startup, company, open source p
 
 | Developer Level | Recommended defaultMode | Why |
 |----------------|------------------------|-----|
-| New to Claude Code | (default -- not set) | Asks permission for every tool, helps build understanding |
-| Comfortable with hooks | `"dontAsk"` | Efficient workflow, hooks catch dangerous actions |
+| New to Claude Code | *(not set)* | Asks permission for every tool, helps build understanding |
+| Comfortable with hooks | `"auto"` | AI classifier evaluates safety contextually; hooks catch the rest |
+| CI/CD pipelines | `"dontAsk"` | Predictable allow-list behavior, no classifier overhead |
 
-Start new developers on the default (ask) mode. Graduate to `dontAsk` only after they've set up and tested the hook guardrails (especially `protect-config.sh` and `block-git-push.sh`).
+Start new developers on the default (ask) mode. Graduate to `"auto"` once they've set up and tested the hook guardrails (especially `protect-config.sh` and `block-git-push.sh`). Use `"dontAsk"` only for CI/CD where you want rigid, predictable behavior. See [SETTINGS-GUIDE.md](SETTINGS-GUIDE.md#defaultmode) for full details on all four modes.
 
 ### Memory for Teams
 

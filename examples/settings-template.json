@@ -6,7 +6,8 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80",
-    "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS": "5000"
+    "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS": "5000",
+    "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB": "1"
   },
 
   "attribution": {
@@ -109,10 +110,10 @@
       "mcp__context7__resolve-library-id",
 
       "__ SKILLS __",
-      "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config)"
     ],
 
+    "__defaultMode_options": "Options: (unset)=ask, 'dontAsk'=allow-list-only, 'auto'=AI-classifier, 'bypassPermissions'=no-checks",
     "defaultMode": "dontAsk",
 
     "additionalDirectories": [
@@ -121,6 +122,17 @@
       "C:\\Users\\YourUser\\.claude\\skills",
       "C:\\Users\\YourUser\\.claude\\plans",
       "C:\\Users\\YourUser\\.claude\\agents"
+    ]
+  },
+
+  "autoMode": {
+    "environment": [
+      "Organization: YOUR_COMPANY. Primary use: YOUR_STACK",
+      "Source control: github.com/YOUR_ORG",
+      "Cloud provider(s): YOUR_CLOUD (e.g., AWS, GCP, Azure)",
+      "Trusted internal domains: YOUR_DOMAINS",
+      "Key internal services: YOUR_SERVICES",
+      "Platform: YOUR_OS"
     ]
   },
 

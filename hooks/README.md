@@ -1,6 +1,6 @@
 # Hooks
 
-10 hook scripts covering 10 lifecycle events. Hooks are deterministic (100% compliance) vs CLAUDE.md instructions (~80%).
+10 hook scripts covering 12 lifecycle events. Hooks are deterministic (100% compliance) vs CLAUDE.md instructions (~80%).
 
 ## Hook Lifecycle
 
@@ -16,6 +16,10 @@
 | PostCompact | After compaction | (prompt hook) | Restore awareness |
 | Stop | After each response | security check + cost-tracker.sh | Last defense + metrics |
 | SessionEnd | Session terminates | session-checkpoint.sh | Guaranteed final save |
+| CwdChanged | Working directory changes | *(not used)* | Auto-load project context on directory switch |
+| FileChanged | External file modification detected | *(not used)* | React to .env changes, config reloads |
+
+> **New in 2.1.83:** `CwdChanged` and `FileChanged` are available but not used in this blueprint. They're useful for monorepo setups (auto-switching context on `cd`) or reactive config reloading.
 
 ## Design Principles
 

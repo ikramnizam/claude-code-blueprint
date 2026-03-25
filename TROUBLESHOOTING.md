@@ -182,6 +182,16 @@ This rule only loads when Claude is working with files under `server/` or `prism
 
 See [SETTINGS-GUIDE.md](SETTINGS-GUIDE.md#defaultmode) for the full explanation.
 
+### Auto mode classifier blocks legitimate actions
+
+**Symptom:** Claude says "the classifier blocked this action" for something you expected to work.
+
+**Fixes:**
+1. **Add the command to your allow list** -- allow-listed commands bypass the classifier entirely
+2. **Add context to `autoMode.environment`** -- tell the classifier about your trusted infrastructure (e.g., your GitHub org, internal domains)
+3. **Check `claude auto-mode config`** -- see what rules the classifier is applying
+4. **Classifier fallback:** After 3 consecutive blocks, Claude will prompt you directly -- approve it once and the pattern is learned
+
 ---
 
 ## Cost
@@ -244,3 +254,20 @@ See [GETTING-STARTED.md](GETTING-STARTED.md#windows-notes) for the full Windows 
 **Fix:** Tilde (`~`) expansion depends on the shell. In Git Bash, `~` expands to `/c/Users/YourUser`. If hooks aren't found:
 1. Try an absolute path: `"command": "bash \"/c/Users/YourUser/.claude/hooks/script.sh\""`
 2. Or use the `$HOME` variable: `"command": "bash \"$HOME/.claude/hooks/script.sh\""`
+
+---
+
+## Syntax Changes
+
+### Deprecated colon wildcard syntax
+
+**Symptom:** Old permission entries like `Bash(npm:*)` stop matching commands.
+
+**Fix:** Replace colons with spaces in wildcard patterns:
+
+```
+Before: "Bash(npm:*)"     -- deprecated
+After:  "Bash(npm *)"     -- current syntax
+```
+
+The legacy colon syntax still works in most versions but may be removed in future releases. The space syntax is the documented standard.

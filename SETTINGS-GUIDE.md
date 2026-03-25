@@ -48,6 +48,20 @@ These live under the `"env"` key in `settings.json` and control Claude Code's ru
 
 **Default:** Lower than 5000ms (varies by version).
 
+### CLAUDE_CODE_SUBPROCESS_ENV_SCRUB
+
+```json
+"CLAUDE_CODE_SUBPROCESS_ENV_SCRUB": "1"
+```
+
+**What it does:** Strips sensitive environment variables (ANTHROPIC_API_KEY, AWS credentials, cloud tokens) from subprocess environments -- hooks, MCP servers, and Bash commands.
+
+**Why it matters:** Without this, any subprocess Claude spawns inherits your full environment, including API keys. A malicious or buggy MCP server could read your Anthropic API key from its own environment.
+
+**Default:** Not set (subprocesses inherit all env vars).
+
+**Who needs it:** Everyone running MCP servers or custom hooks. Minimal risk to enable -- your hooks and MCP servers almost never need your Anthropic API key.
+
 ---
 
 ## Top-Level Settings
@@ -102,18 +116,81 @@ Auto-deletes Claude Code session data older than 60 days. This includes conversa
 
 ### defaultMode
 
+Claude Code has four permission modes, each balancing safety against productivity:
+
+| Mode | Behavior | Best For |
+|------|----------|----------|
+| *(not set)* | Asks permission for every tool use | New users building trust |
+| `"dontAsk"` | Allow-listed tools run silently; unlisted tools are silently **denied** | CI pipelines, locked-down environments |
+| `"auto"` | Allow-listed tools run silently; unlisted tools go through an **AI classifier** that evaluates safety contextually | Power users who want fewer prompts without losing safety |
+| `"bypassPermissions"` | Everything runs without checks | Isolated containers/VMs only -- never on a real machine |
+
+**`"auto"` mode (new in 2.1.83):**
+
 ```json
-"defaultMode": "dontAsk"
+"defaultMode": "auto"
 ```
 
-**What it does:** Claude executes any tool in the `allow` list without asking for permission. Tools not in the list are still blocked.
+The auto mode classifier (runs on Sonnet 4.6) reviews each non-allow-listed action against 26 built-in safety rules (force push, data exfiltration, production deploys, `curl | bash`, etc.). It approves safe actions and blocks risky ones -- no manual prompting needed.
 
-**Warning for beginners:** This is the most permissive mode. It's safe *only if* you have well-configured hooks as guardrails (like `protect-config.sh` blocking config edits and `block-git-push.sh` preventing pushes). Without hooks, Claude can freely write files, run shell commands, and make git commits without confirmation.
+**Key facts about auto mode:**
+- Allow-listed commands bypass the classifier entirely (saves tokens and latency)
+- Hooks still run regardless of mode -- your `block-git-push.sh` and `protect-config.sh` remain active
+- Classifier calls add token cost (small per call, but adds up in long sessions)
+- If the classifier blocks an action 3 times consecutively, it falls back to prompting you
 
 **Recommendation:**
-- **New users:** Don't set this. Use the default mode (asks for permission on each tool use) until you trust your setup.
-- **Power users with hooks:** `dontAsk` is efficient -- hooks catch the dangerous actions, and you don't get prompted for routine operations.
-- **Teams:** Start new developers on default mode. Graduate to `dontAsk` after they've set up hooks. See [GETTING-STARTED.md](GETTING-STARTED.md#setting-up-for-teams).
+- **New users:** Don't set this. Use the default mode until you trust your setup.
+- **Power users with hooks:** `"auto"` is the sweet spot -- intelligent safety without prompt fatigue. The allow list becomes a performance optimization, not a security boundary.
+- **CI/CD pipelines:** `"dontAsk"` is still better here -- predictable behavior, no classifier overhead.
+- **Teams:** See [GETTING-STARTED.md](GETTING-STARTED.md#setting-up-for-teams).
+
+### autoMode.environment
+
+When using `"auto"` mode, you can tell the classifier about your trusted infrastructure:
+
+```json
+"autoMode": {
+    "environment": [
+        "Organization: Your Company. Primary use: web development",
+        "Source control: github.com/your-org",
+        "Cloud provider(s): AWS (EC2, S3)",
+        "Trusted internal domains: *.internal.example.com",
+        "Key internal services: PostgreSQL, Redis, CI/CD runners",
+        "Platform: macOS / Linux / Windows with Git Bash"
+    ]
+}
+```
+
+**What it does:** Provides context so the classifier can distinguish between "pushing to our GitHub org" (safe) and "pushing to an unknown remote" (blocked).
+
+**Important:** Only set `environment`. Do NOT set `autoMode.allow` or `autoMode.soft_deny` unless you copy ALL defaults first -- setting them **replaces the entire default list**. Run `claude auto-mode defaults` to see the built-in rules.
+
+**Verification:** Run `claude auto-mode config` to see effective rules, or `claude auto-mode critique` for AI feedback on your configuration.
+
+### Team Settings (managed-settings.d/)
+
+For teams deploying organization-wide policies, Claude Code 2.1.83 supports drop-in settings fragments:
+
+```
+~/.claude/managed-settings.d/
+  01-security-baseline.json
+  02-team-conventions.json
+```
+
+Files merge alphabetically alongside `managed-settings.json`. Each fragment can enforce policies (deny rules, environment descriptions) independently. Useful when different teams need different rules.
+
+### sandbox.failIfUnavailable
+
+```json
+"sandbox": {
+    "failIfUnavailable": true
+}
+```
+
+**What it does:** Exits with an error if sandboxing is enabled but the sandbox runtime can't start, instead of silently falling back to running unsandboxed. Useful in CI/CD where you want to guarantee sandboxed execution.
+
+**Default:** false (falls back to unsandboxed if sandbox unavailable).
 
 ### Permission Categories
 
@@ -189,6 +266,7 @@ The Stop hook uses `"model": "sonnet"` for its security verification prompt. Thi
 2. **Parallel agent spawns:** The review skill spawns up to 3 agents simultaneously. Each agent has its own context window and token budget.
 3. **Always-thinking + high effort:** Extended thinking generates additional tokens that are billed. `effortLevel: "high"` increases this further.
 4. **Agent teams:** Sessions with active agent teams use roughly 7x more tokens than standard sessions (per Anthropic's official docs).
+5. **Playwright MCP vs CLI:** The Playwright MCP server streams full DOM accessibility trees into context (~114K tokens per task). Running `npx playwright test` via Bash uses ~27K tokens for the same work -- a 76% reduction. Use MCP for interactive browser exploration; use CLI for test execution.
 
 ### Rough Daily Estimates
 

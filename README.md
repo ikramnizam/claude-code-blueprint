@@ -2,6 +2,8 @@
 
 A battle-tested reference architecture for Claude Code power users. Not a plugin to install — a blueprint to learn from and adapt.
 
+> Last verified with **Claude Code 2.1.83** (March 2026). Core patterns work across versions; version-specific features are noted inline.
+
 ## What This Is
 
 This repository documents a production Claude Code setup built over numerous sessions of real development work. Every agent, skill, hook, and rule exists because a real incident taught us it was needed.
