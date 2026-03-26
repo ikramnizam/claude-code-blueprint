@@ -38,7 +38,9 @@ This repository documents a production Claude Code setup built over numerous ses
 
 3. **Context is currency** — Every token loaded into context is a token not available for your code. Keep MEMORY.md under 100 lines. Extract to topic files. Use path-scoped rules so irrelevant rules don't load.
 
-4. **Battle-tested over theoretical** — Every rule in this repo exists because something went wrong without it. The "WHY" matters more than the "WHAT".
+4. **Hooks are free, context is cheap** — The 10 hook scripts cost zero tokens (they run outside Claude's context). CLAUDE.md adds ~2,300 tokens per session — roughly 1-5% of a typical session. The blueprint saves more tokens than it costs by preventing redo cycles. See [BENCHMARKS.md](BENCHMARKS.md#token-cost-per-component).
+
+5. **Battle-tested over theoretical** — Every rule in this repo exists because something went wrong without it. The "WHY" matters more than the "WHAT".
 
 ## Getting Started
 

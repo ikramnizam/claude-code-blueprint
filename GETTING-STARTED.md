@@ -107,6 +107,28 @@ Show me what you're doing at each step so I can learn.
 
 Claude Code will walk you through the setup interactively — creating files, explaining what each one does, and wiring everything together.
 
+### Will This Affect My Token Usage?
+
+The short answer: **barely.** Here's why:
+
+| Component | Token Cost | When It Loads |
+|-----------|-----------|---------------|
+| **Hooks** (all 10) | **Zero** | External shell scripts — never touch your token budget |
+| **CLAUDE.md** | ~2,300 tokens | Once at session start (stays in context) |
+| **Rules** | ~700-1,500 each | Only when editing matching files (path-scoped) |
+| **Skills** | ~500-1,100 each | Only when you trigger them |
+| **Agents** | Varies (new context per spawn) | Only when explicitly invoked |
+
+For perspective: a typical 30-turn coding session uses 50,000-200,000+ tokens. The blueprint adds ~2,300 tokens (~1-5% overhead). Meanwhile, one prevented wrong-approach-then-redo cycle saves 5,000-20,000 tokens. **The blueprint saves more than it costs.**
+
+**Subscription users (Pro, Max):** Start with CLAUDE.md + hooks (the Minimal preset). Hooks are free. CLAUDE.md is a tiny fraction of your usage. Add agents when comfortable.
+
+**API billing users:** The blueprint adds roughly 1-3 cents per session. Model tiering (Haiku for docs, Sonnet for code) is your biggest savings lever.
+
+**Budget-conscious?** Hooks give the most value per token spent (literally free). CLAUDE.md is the second-best ROI. Agents are the most expensive — add them one at a time, starting with `verify-plan`.
+
+See [BENCHMARKS.md](BENCHMARKS.md#token-cost-per-component) for the complete breakdown, including subscription plan recommendations and an upgrade guide.
+
 ### Ready for More?
 
 The rest of this guide covers the full Claude Code ecosystem — prerequisites, MCP servers, agents, skills, hooks, and memory systems. Continue to [Prerequisites](#prerequisites) when you're ready to go deeper.

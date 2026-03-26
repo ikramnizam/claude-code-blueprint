@@ -9,6 +9,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ## 2026-03-26
 
 ### Added
+- Token cost per component breakdown with verified file measurements in [BENCHMARKS.md](BENCHMARKS.md#token-cost-per-component)
+- Subscription plan recommendations, upgrade guide, and Pro user's blueprint journey in [BENCHMARKS.md](BENCHMARKS.md#subscription-plans--the-blueprint)
+- API billing cost analysis with per-session overhead calculations in BENCHMARKS.md
+- "Will This Affect My Token Usage?" FAQ in [GETTING-STARTED.md](GETTING-STARTED.md#will-this-affect-my-token-usage) beginner section
+- Token cost philosophy point (#4: "Hooks are free, context is cheap") in README.md
 - Complete beginner onboarding section in [GETTING-STARTED.md](GETTING-STARTED.md#new-to-claude-code-start-here) (model recommendations, 1-minute setup, `~/.claude/` explained, self-setup prompt)
 - "Complete beginner" row in README.md adoption table
 - ADR template ([memory-template/templates/adr-template.md](memory-template/templates/adr-template.md)) for structured architectural decision records
