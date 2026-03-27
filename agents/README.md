@@ -24,8 +24,8 @@ Every agent follows this structure:
 
 | Mode | Agents | Why |
 |------|--------|-----|
-| (default) | backend, frontend, qa-tester | Need write access to implement |
-| plan | verify-plan, db-analyst, devops-engineer, api-documenter | Read-only analysis — should never modify files |
+| (default) | backend, frontend, qa-tester, project-architect, docs-writer | Need write access to implement or generate |
+| plan | verify-plan, code-reviewer, security-reviewer, db-analyst, devops-engineer, api-documenter | Read-only analysis — should never modify files |
 
 ## Worktree Isolation
 
@@ -73,7 +73,7 @@ Agents are powerful but imperfect. Common failure modes:
 - **Hallucination**: An agent may reference files, functions, or APIs that do not exist. Always verify with `git diff` (for write agents) or manual inspection (for analysis agents).
 - **Stale context**: Agents cannot see the main session's full history. They may repeat work or miss earlier decisions.
 - **Overconfidence**: An agent that says "all checks pass" may not have actually run all checks. Verify critical claims.
-- **Read-only safety**: Agents with `permissionMode: plan` (verify-plan, db-analyst, devops-engineer, api-documenter) cannot modify files -- they can only analyze and report. This is a safety feature, not a limitation.
+- **Read-only safety**: Agents with `permissionMode: plan` (verify-plan, code-reviewer, security-reviewer, db-analyst, devops-engineer, api-documenter) cannot modify files -- they can only analyze and report. This is a safety feature, not a limitation.
 
 **Rule of thumb:** Trust agents for research and drafting. Verify before committing their output.
 

@@ -7,8 +7,6 @@ permissionMode: plan
 isolation: worktree
 maxTurns: 15
 memory: user
-skills:
-  - review
 ---
 
 You are a senior security engineer performing a security audit.

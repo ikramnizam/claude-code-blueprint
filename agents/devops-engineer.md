@@ -2,7 +2,7 @@
 name: devops-engineer
 description: Handles deployment configs, CI/CD pipelines, Docker, infrastructure, and cloud operations. Use for deployment reviews and infrastructure tasks.
 model: sonnet
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob
 maxTurns: 20
 permissionMode: plan
 memory: user

@@ -20,7 +20,7 @@ Thank you for taking the time to contribute. This blueprint is a living referenc
 Additions to `WHY.md` that document a real incident — what went wrong, what was learned, and what component was built as a result. The more specific and grounded in an actual problem, the better.
 
 ### Hook Scripts
-Shell scripts for `hooks/` that automate lifecycle events (PreToolUse, PostToolUse, Stop, Notification, etc.). Must be general-purpose — not tied to a specific project, company, or environment.
+Shell scripts for `hooks/` that automate lifecycle events (SessionStart, PreToolUse, PostToolUse, Stop, SessionEnd, etc.). Must be general-purpose — not tied to a specific project, company, or environment.
 
 ### Agent Templates
 New `.md` files for `agents/` that define a specialized subagent role. Should include a clear `description` field (for Claude's tool selection), a well-scoped system prompt, and an appropriate model tier recommendation.
@@ -110,7 +110,7 @@ Use the PR template. Fill in all sections — especially the NDA checklist.
 ---
 name: agent-name
 description: One sentence used by Claude for tool selection. Be specific about when this agent should be invoked.
-model: claude-opus-4-5  # or claude-sonnet-4-5, claude-haiku-4-5
+model: opus  # or sonnet, haiku (shorthand — Claude Code resolves to full model IDs)
 ---
 
 [System prompt content]
@@ -129,7 +129,7 @@ skills/
 
 ### Hook script conventions
 
-- Use `#!/usr/bin/env bash` as the shebang
+- Use `#!/bin/bash` as the shebang (consistent with all existing hooks)
 - Exit 0 on success, non-zero to block (for PreToolUse hooks that enforce policy)
 - Write errors to stderr: `echo "Error: ..." >&2`
 - Include a comment block at the top explaining when the hook fires and what it does

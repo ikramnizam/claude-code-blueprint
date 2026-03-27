@@ -93,7 +93,7 @@ Subscription plans measure usage in messages/interactions rather than raw tokens
 
 ### API Billing Users
 
-You pay per token, so exact costs matter. Based on [current pricing](https://claude.com/pricing):
+You pay per token, so exact costs matter. Based on [current pricing](https://docs.anthropic.com/en/docs/about-claude/pricing):
 
 | Blueprint Component | Per-Session Cost (Sonnet) | Per-Session Cost (Opus) |
 |--------------------|--------------------------|------------------------|
@@ -160,7 +160,7 @@ A gradual adoption timeline for budget-conscious users:
 
 The blueprint is designed to scale with you. Start small, add components as you feel the need, and upgrade your plan only when the tools themselves demand more headroom.
 
-*Subscription plan details and pricing change over time. Visit [claude.com/pricing](https://claude.com/pricing) for current plans, pricing, and usage limits.*
+*Subscription plan details and pricing change over time. Visit [claude.com/pricing](https://docs.anthropic.com/en/docs/about-claude/pricing) for current plans, pricing, and usage limits.*
 
 ---
 

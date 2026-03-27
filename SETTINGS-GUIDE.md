@@ -125,7 +125,7 @@ Claude Code has four permission modes, each balancing safety against productivit
 | `"auto"` | Allow-listed tools run silently; unlisted tools go through an **AI classifier** that evaluates safety contextually | Power users who want fewer prompts without losing safety |
 | `"bypassPermissions"` | Everything runs without checks | Isolated containers/VMs only -- never on a real machine |
 
-**`"auto"` mode (new in 2.1.83):**
+**`"auto"` mode:**
 
 ```json
 "defaultMode": "auto"
@@ -170,7 +170,7 @@ When using `"auto"` mode, you can tell the classifier about your trusted infrast
 
 ### Team Settings (managed-settings.d/)
 
-For teams deploying organization-wide policies, Claude Code 2.1.83 supports drop-in settings fragments:
+For teams deploying organization-wide policies, Claude Code supports drop-in settings fragments:
 
 ```
 ~/.claude/managed-settings.d/
@@ -293,7 +293,7 @@ The Stop hook uses `"model": "sonnet"` for its security verification prompt. Thi
 
 ### Rough Daily Estimates
 
-From [Anthropic's official Claude Code cost documentation](https://code.claude.com/docs/en/costs):
+From [Anthropic's Claude Code documentation](https://docs.anthropic.com/en/docs/claude-code) (verify current URL -- cost docs may move between releases):
 
 | Usage Pattern | Daily Cost (approx) |
 |--------------|-------------------|

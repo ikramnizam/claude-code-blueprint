@@ -1,6 +1,6 @@
 # Hooks
 
-8 lifecycle hooks + 2 utility scripts, covering 12 lifecycle events. Hooks are deterministic (100% compliance) vs CLAUDE.md instructions (~80%).
+8 lifecycle hooks + 2 utility scripts, covering 10 lifecycle events. Hooks are deterministic (100% compliance) vs CLAUDE.md instructions (~80%).
 
 ## Hook Lifecycle
 
@@ -19,7 +19,7 @@
 | CwdChanged | Working directory changes | *(not used)* | Auto-load project context on directory switch |
 | FileChanged | External file modification detected | *(not used)* | React to .env changes, config reloads |
 
-> **New in 2.1.83:** `CwdChanged` and `FileChanged` are available but not used in this blueprint. They're useful for monorepo setups (auto-switching context on `cd`) or reactive config reloading.
+> `CwdChanged` and `FileChanged` are available but not used in this blueprint. They're useful for monorepo setups (auto-switching context on `cd`) or reactive config reloading.
 
 **Utility scripts** (not lifecycle hooks -- run manually):
 - `verify-mcp-sync.sh` — Compares MCP server configs across CLI, VS Code extension, and Cursor. Run with `bash ~/.claude/hooks/verify-mcp-sync.sh`
@@ -34,7 +34,7 @@
 
 ## Requirements
 
-All command-type hooks require **Python 3** (or Python 2.7+) on your PATH. Each script auto-detects with:
+All command-type hooks require **Python 3.6+** on your PATH (f-strings are used in error messages). Each script auto-detects with:
 
 ```bash
 PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null)

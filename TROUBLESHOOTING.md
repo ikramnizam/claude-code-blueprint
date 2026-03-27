@@ -287,7 +287,9 @@ Replace each placeholder with your actual path. See [skills/README.md](skills/RE
 **Cause:** The agent has `permissionMode: plan` in its frontmatter, which restricts it to read-only tools (Read, Grep, Glob).
 
 **These agents are read-only by design:**
-- `verify-plan` — plan verification (read-only)
+- `verify-plan` — plan verification
+- `code-reviewer` — code review
+- `security-reviewer` — security audit
 - `db-analyst` — database schema analysis
 - `devops-engineer` — infrastructure review
 - `api-documenter` — API documentation generation

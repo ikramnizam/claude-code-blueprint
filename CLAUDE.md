@@ -117,6 +117,10 @@ The subagent sees the plan cold (different context window = different attention 
 
 ## Stack Rules (customize for your project)
 
+<!-- IMPORTANT: CLAUDE.md is committed to git and visible to everyone on the team.
+     Do NOT put secrets (API keys, passwords, tokens, connection strings) here.
+     Use environment variables or a secrets manager for credentials. -->
+
 <!-- Add your project's framework-specific rules below. These complement the behavioral rules above
      with concrete conventions for your tech stack. Replace the examples with your own. -->
 

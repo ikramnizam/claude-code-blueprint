@@ -2,7 +2,7 @@
 name: db-analyst
 description: Analyzes database schemas, queries, migrations, and performance. Use for Prisma schema reviews, query optimization, and migration planning.
 model: sonnet
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob
 maxTurns: 20
 permissionMode: plan
 memory: user
