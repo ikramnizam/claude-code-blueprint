@@ -181,7 +181,7 @@ See [rules/README.md](rules/README.md) for creating custom rules.
 | **Small startup (2-5 devs)** | Above + shared rules + 2-3 agents | See [Team Setup](GETTING-STARTED.md#setting-up-for-teams) |
 | **Established team (5+ devs)** | Full blueprint, adapted | Fork, customize, commit shared config |
 | **Learning to code** | [GETTING-STARTED.md](GETTING-STARTED.md) only | Ignore agents/skills/memory until comfortable |
-| **Coming from another tool** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | Concepts transfer; adapt what you need |
+| **Coming from another tool** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | Concepts transfer; **Cursor + Claude Code users:** see *Cursor in depth* in that guide (dual config, skills, `cli-config`, hooks nuance) |
 
 ### Option A: Fork (recommended)
 Fork this repo to customize it as your own living reference. You can pull upstream updates later as the blueprint evolves.
