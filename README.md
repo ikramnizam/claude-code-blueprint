@@ -35,6 +35,17 @@ This gives Claude Code three rules that prevent the most common AI coding mistak
 
 Ready for more? See the [full adoption path](#recommended-adoption-path) or the [30-minute beginner guide](GETTING-STARTED.md). New to Claude Code? See [who this is for](#who-is-this-for) or the [FAQ](FAQ.md).
 
+**Want more than CLAUDE.md?** Install hooks, agents, and settings automatically:
+
+```bash
+# From a cloned/forked copy of this repo
+./setup.sh --preset=standard
+```
+
+Or let Claude do it -- paste into a Claude Code session: *"Set up the Claude Code Blueprint. Copy CLAUDE.md to my project root, set up hooks and settings in ~/.claude/. Show me each step."*
+
+See [SETUP.md](SETUP.md) for all setup options including a verification checklist.
+
 ---
 
 ### Before You Start
@@ -207,6 +218,9 @@ Clone the repo, then selectively copy components into your `~/.claude/` director
 
 ### Option C: Cherry-pick
 Browse the repo on GitHub and copy only the specific files you need. No installation required.
+
+### Option D: Automated Setup
+Run `./setup.sh` from a cloned or forked copy. Choose a preset (minimal/standard/full) and the script handles directory creation, file copying, settings merge, and placeholder replacement. See [SETUP.md](SETUP.md).
 
 ### Recommended adoption path
 

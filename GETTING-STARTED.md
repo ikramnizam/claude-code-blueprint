@@ -78,7 +78,7 @@ For a more complete setup, **fork** this repository so you have your own copy to
    git clone https://github.com/YOUR-USERNAME/claude-code-blueprint.git
    ```
 4. Copy `CLAUDE.md` into each of your project folders
-5. *(Optional)* Copy hook scripts into your `~/.claude/hooks/` folder — see below for what this means
+5. *(Optional)* Run `./setup.sh` to install hooks, agents, and settings to `~/.claude/` automatically — or copy them manually (see below for what this means)
 
 ### Where Is `~/.claude/`?
 
@@ -122,6 +122,8 @@ IMPORTANT: Do NOT modify any project-level .claude/ directory. All hooks, permis
 ```
 
 Claude Code will walk you through the setup interactively — creating files, explaining what each one does, and wiring everything together.
+
+For a non-interactive automated setup, run `./setup.sh` from the blueprint repository. See [SETUP.md](SETUP.md) for usage, presets, and a verification checklist.
 
 ### Will This Affect My Token Usage?
 

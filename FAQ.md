@@ -87,8 +87,8 @@ Welcome. Here's your fastest path:
 
 1. **Right now (60 seconds):** Open [CLAUDE.md](CLAUDE.md) in this repo. Click "Raw" (top-right), copy everything, and paste it into a new file called `CLAUDE.md` in your project's root folder.
 2. **Start using Claude Code normally.** No special prompts needed. Claude automatically reads your CLAUDE.md and follows the three rules inside it (Verify-After-Complete, Diagnose-First, Plan-Before-Execute).
-3. **When curious:** Read the [beginner guide](GETTING-STARTED.md#new-to-claude-code-start-here) to understand what Claude Code is and how to access it (Desktop app, VS Code extension, CLI, or web).
-4. **When ready for more:** Follow the [recommended adoption path](README.md#recommended-adoption-path) to add hooks, agents, and skills incrementally.
+3. **When ready for hooks and agents:** Run `./setup.sh --preset=standard` from a cloned copy, or [let Claude set it up for you](GETTING-STARTED.md#let-claude-code-set-up-for-you) interactively. See [SETUP.md](SETUP.md) for all options.
+4. **When curious:** Read the [beginner guide](GETTING-STARTED.md#new-to-claude-code-start-here) to understand what Claude Code is and how to access it (Desktop app, VS Code extension, CLI, or web).
 5. **If something breaks:** Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 No installation required. No dependencies. No package manager. Just one markdown file to start.

@@ -15,6 +15,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 - **README.md**: Deep Dives grid expanded from 2x3 to 3x3 (added FAQ, Getting Started, Troubleshooting)
 - **GETTING-STARTED.md**: "Got This Link from a Colleague?" quickstart flow in beginner section
 - **GETTING-STARTED.md**: FAQ.md link at end of beginner section and in "What to Learn Next" list
+- **setup.sh**: Interactive installer script with 3 presets (minimal/standard/full), cross-platform OS detection, safe file copying with conflict resolution and diff preview, settings.json merge via Python, placeholder variable replacement, post-install verification
+- **SETUP.md**: Focused action-only setup guide covering automated (setup.sh), AI-assisted (prompt), and manual (checklist) setup methods with verification commands
+- **README.md**: Setup automation block in Quick Start (setup.sh + condensed "let Claude do it" prompt) and Option D in Getting Started
+- **FAQ.md**: setup.sh shortcut added to "A colleague sent me this link" section
+- **GETTING-STARTED.md**: Cross-links to SETUP.md and setup.sh in "Let Claude Code Set Up for You" and "5-Minute Setup" sections
+- **README.ja.md, README.ko.md, README.zh.md**: Setup automation block and Option D mirrored with translations
 
 ### Changed
 - **README.md**: Hero subtitle rewritten to lead with benefits ("Make Claude Code smarter, safer, and more consistent -- for any project, at any skill level")

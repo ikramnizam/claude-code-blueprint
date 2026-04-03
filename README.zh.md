@@ -35,6 +35,17 @@ curl -o CLAUDE.md https://raw.githubusercontent.com/faizkhairi/claude-code-bluep
 
 准备好深入了解？查看[完整采用路径](#推荐的采用路径)或[30 分钟初学者指南](GETTING-STARTED.md)。Claude Code 新手？查看[适用对象](#这是为谁准备的)或 [FAQ](FAQ.md)。
 
+**需要比 CLAUDE.md 更多？** 自动安装 hooks、agents 和设置：
+
+```bash
+# 从克隆或 Fork 的副本中运行
+./setup.sh --preset=standard
+```
+
+或者让 Claude 来设置 -- 粘贴到 Claude Code 会话中：*"设置 Claude Code Blueprint。将 CLAUDE.md 复制到我的项目根目录，在 ~/.claude/ 中设置 hooks 和设置。每一步都展示给我看。"*
+
+所有设置选项请参见 [SETUP.md](SETUP.md)。
+
 ---
 
 ### 开始前须知
@@ -207,6 +218,9 @@ Clone 仓库，然后有选择地将组件复制到你的 `~/.claude/` 目录。
 
 ### 选项 C：Cherry-pick
 在 GitHub 上浏览仓库，只复制你需要的特定文件。无需安装。
+
+### 选项 D：自动设置
+从克隆或 Fork 的副本运行 `./setup.sh`。选择预设（minimal/standard/full），脚本将处理目录创建、文件复制、设置合并和占位符替换。参见 [SETUP.md](SETUP.md)。
 
 ### 推荐的采用路径
 
