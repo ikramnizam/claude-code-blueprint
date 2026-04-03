@@ -1,0 +1,9 @@
+{
+  // Light-touch linting: only critical structural issues, not style enforcement
+  "default": false,
+  "MD001": true,
+  "MD009": true,
+  "MD012": true,
+  "MD037": true,
+  "MD047": true
+}
