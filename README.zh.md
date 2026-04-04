@@ -67,7 +67,7 @@ curl -o CLAUDE.md https://raw.githubusercontent.com/faizkhairi/claude-code-bluep
 | **小初创（2-5 人）** | 上述 + 共享规则 + 2-3 个 agents | 参见 [Team Setup](GETTING-STARTED.md#setting-up-for-teams) |
 | **成熟团队（5+ 人）** | 完整蓝图，根据需要改进 | Fork、定制、提交共享配置 |
 | **学习编程** | 仅 [GETTING-STARTED.md](GETTING-STARTED.md) | 在熟悉前忽略 agents/skills/memory |
-| **从其他工具迁移** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | 概念可转移；参见该指南中的 *Cursor in depth* |
+| **从其他工具迁移** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | 概念可转移；参见 *Copilot/Cursor in depth* 部分 |
 
 ### 你的进阶路径
 
@@ -90,7 +90,7 @@ curl -o CLAUDE.md https://raw.githubusercontent.com/faizkhairi/claude-code-bluep
 |------------|------------|
 | 每个组件都有 [战斗故事](WHY.md)解释为什么存在 | 没有背景的配置 |
 | [3 条行为规则](CLAUDE.md)防止 AI 编码错误 | 要复制的设置列表 |
-| [跨工具指南](CROSS-TOOL-GUIDE.md)为 Cursor、Codex、Gemini、Windsurf | 仅单一工具 |
+| [跨工具指南](CROSS-TOOL-GUIDE.md)覆盖 Copilot、Cursor、Cline、Roo Code、OpenCode 等10个工具 | 仅单一工具 |
 | [初学者友好的](GETTING-STARTED.md)包含 6 个采用角色 | 假设具有专业知识 |
 | [烟雾测试的 hooks](hooks/test-hooks.sh)包含 35 个自动化测试 | 未测试的脚本 |
 | 安全优先：[配置放置指南](GETTING-STARTED.md#where-config-belongs-project-vs-personal)、隐私警告、[优雅降级](agents/README.md#agents-are-not-infallible) | 无安全指导 |
@@ -239,7 +239,7 @@ Clone 仓库，然后有选择地将组件复制到你的 `~/.claude/` 目录。
 | **[架构](ARCHITECTURE.md)** | **[设置指南](SETTINGS-GUIDE.md)** | **[战斗故事](WHY.md)** |
 | 系统设计、hook 生命周期、组件关系 | 每个环境变量、权限和 hook 的完整说明及理由 | 每个组件背后的事件和教训 |
 | **[基准测试](BENCHMARKS.md)** | **[预设](PRESETS.md)** | **[跨工具指南](CROSS-TOOL-GUIDE.md)** |
-| Token 节省、成本影响、质量指标 | 为独立开发者、团队和 CI/CD 提供的现成配置 | Cursor、Codex CLI、Gemini CLI、Windsurf |
+| Token 节省、成本影响、质量指标 | 为独立开发者、团队和 CI/CD 提供的现成配置 | Copilot、Cursor、Cline、Roo Code、OpenCode 等10个工具 |
 | **[FAQ](FAQ.md)** | **[Getting Started](GETTING-STARTED.md)** | **[Troubleshooting](TROUBLESHOOTING.md)** |
 | 社区常见问题解答 | 从零到高效 30 分钟 | 常见问题与解决方案 |
 | **[Setup Guide](SETUP.md)** | **[Examples](examples/)** | **[Roadmap](ROADMAP.md)** |

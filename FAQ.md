@@ -61,10 +61,10 @@ These are the questions we hear most from the community. If yours isn't here, [o
 
 **The concepts transfer. The implementation files are Claude Code-specific.**
 
-- [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) maps every blueprint concept to its equivalent in Cursor, Codex CLI, Gemini CLI, and Windsurf.
+- [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) maps every blueprint concept to its equivalent in 10 other tools: Copilot, Cursor, Cline, Roo Code, OpenCode, Codex CLI, Gemini CLI, Amazon Q, Windsurf, and Aider.
 - The behavioral rules philosophy (verify, diagnose, plan) works in any AI coding tool -- you just express them differently.
 - **Cursor users:** Dual config is supported. The Cross-Tool Guide has a dedicated "Cursor in depth" section covering `hooks.json`, `permissions.json`, `.cursorignore`, and the `cli-config` bridge.
-- **Copilot users:** No direct equivalent for hooks or agents, but you can adapt the CLAUDE.md rules into a Copilot instructions file (`.github/copilot-instructions.md`).
+- **Copilot users:** Copilot now has hooks (8 events, Preview), custom agents (`.agent.md`), and memory. The Cross-Tool Guide has a dedicated "Copilot in depth" section.
 - **Windsurf users:** Supports behavioral rules and memory but not custom subagents. See the Cross-Tool Guide for specifics.
 
 ---

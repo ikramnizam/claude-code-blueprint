@@ -67,7 +67,7 @@ See [SETUP.md](SETUP.md) for all setup options including a verification checklis
 | **Small startup (2-5 devs)** | Above + shared rules + 2-3 agents | See [Team Setup](GETTING-STARTED.md#setting-up-for-teams) |
 | **Established team (5+ devs)** | Full blueprint, adapted | Fork, customize, commit shared config |
 | **Learning to code** | [GETTING-STARTED.md](GETTING-STARTED.md) only | Ignore agents/skills/memory until comfortable |
-| **Coming from another tool** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | Concepts transfer; see *Cursor in depth* in that guide |
+| **Coming from another tool** | [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) | Concepts transfer; see *Copilot/Cursor in depth* sections |
 
 ### Your Progression
 
@@ -90,7 +90,7 @@ Other repos give you **135 agents**. We give you **11** -- and explain why each 
 |---------------|---------------------|
 | Every component has a [battle story](WHY.md) explaining why it exists | Configs without context |
 | [3 behavioral rules](CLAUDE.md) that prevent AI coding mistakes | Lists of settings to copy |
-| [Cross-tool guide](CROSS-TOOL-GUIDE.md) for Cursor, Codex, Gemini, Windsurf | Single-tool only |
+| [Cross-tool guide](CROSS-TOOL-GUIDE.md) for 10 tools (Copilot, Cursor, Cline, Roo Code, OpenCode, and more) | Single-tool only |
 | [Beginner-friendly](GETTING-STARTED.md) with 6 adoption personas | Assumed expertise |
 | [Smoke-tested hooks](hooks/test-hooks.sh) with 35 automated tests | Untested scripts |
 | Safety-first: [config placement guide](GETTING-STARTED.md#where-config-belongs-project-vs-personal), privacy warnings, [graceful degradation](agents/README.md#agents-are-not-infallible) | No safety guidance |
@@ -239,7 +239,7 @@ Run `./setup.sh` from a cloned or forked copy. Choose a preset (minimal/standard
 | **[Architecture](ARCHITECTURE.md)** | **[Settings Guide](SETTINGS-GUIDE.md)** | **[Battle Stories](WHY.md)** |
 | System design, hook lifecycle, component relationships | Every env var, permission, and hook explained with rationale | The incidents and lessons behind every component |
 | **[Benchmarks](BENCHMARKS.md)** | **[Presets](PRESETS.md)** | **[Cross-Tool Guide](CROSS-TOOL-GUIDE.md)** |
-| Token savings, cost impact, quality metrics | Ready-to-copy configs for solo, team, and CI/CD | Cursor, Codex CLI, Gemini CLI, Windsurf |
+| Token savings, cost impact, quality metrics | Ready-to-copy configs for solo, team, and CI/CD | Copilot, Cursor, Cline, Roo Code, OpenCode, and 5 more |
 | **[FAQ](FAQ.md)** | **[Getting Started](GETTING-STARTED.md)** | **[Troubleshooting](TROUBLESHOOTING.md)** |
 | Top community questions answered | From zero to productive in 30 minutes | Common issues and fixes |
 | **[Setup Guide](SETUP.md)** | **[Examples](examples/)** | **[Roadmap](ROADMAP.md)** |

@@ -29,7 +29,7 @@ New `.md` files for `agents/` that define a specialized subagent role. Should in
 New skill directories under `skills/` with a `SKILL.md` entry point. Skills should be triggered by natural language, not slash commands, and should solve a problem that recurs across projects.
 
 ### Cross-Tool Mappings
-Additions to `CROSS-TOOL-GUIDE.md` mapping a Claude Code concept to its equivalent in Cursor, Codex CLI, Gemini CLI, Windsurf, or other AI coding tools.
+Additions to `CROSS-TOOL-GUIDE.md` mapping a Claude Code concept to its equivalent in Copilot, Cursor, Cline, Roo Code, OpenCode, Codex CLI, Gemini CLI, Amazon Q, Windsurf, Aider, or other AI coding tools.
 
 ### Bug Fixes
 Corrections to broken scripts, incorrect instructions, misleading documentation, or commands that don't work on a supported platform (macOS, Linux, Windows/WSL).

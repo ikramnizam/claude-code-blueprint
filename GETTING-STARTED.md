@@ -634,7 +634,7 @@ Once you're comfortable with the basics:
 6. **ADR template** — Use [memory-template/templates/adr-template.md](memory-template/templates/adr-template.md) when documenting architectural decisions
 7. **Architecture** — Read [ARCHITECTURE.md](ARCHITECTURE.md) for how everything connects
 8. **Stack rule templates** — See [PRESETS.md](PRESETS.md#stack-rule-templates) for framework-agnostic CLAUDE.md snippets by project type
-9. **Cross-tool** — Read [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) if you also use Cursor, Codex, or Gemini
+9. **Cross-tool** — Read [CROSS-TOOL-GUIDE.md](CROSS-TOOL-GUIDE.md) if you also use Copilot, Cursor, Cline, Roo Code, OpenCode, or other AI tools
 10. **FAQ** — See [FAQ.md](FAQ.md) for answers to the most common community questions
 11. **Troubleshooting** — Read [TROUBLESHOOTING.md](TROUBLESHOOTING.md) if something isn't working as expected
 
